@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>To do List</h1>
+    <h3><%= todos.length === 0 ? 'There are no To Dos yet!' : '' %></h3>
+
+    <% todos.forEach(function(t) { %>
+      <ul>
+        <li><%= t.item %> - <%= t.done ? 'Done' : 'Not Done' %> </li>
+      </ul>
+      <% }); %>
+
+    <hr>
+
+    <form id="add-todo" action="/" method="POST">
+      <label>Title:</label>
+      <input type="text" name="todo">
+      <input type="submit" value="ADD TO DO" required="true">
+    </form>
+
+
+  </body>
+</html>
